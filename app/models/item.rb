@@ -13,7 +13,7 @@ class Item < ApplicationRecord
   validates :shipment_day_id, numericality: { other_than: 1, message: "can't be blank"} 
 
   validates :price, presence: true, format: { with: /\A[0-9]+\z/, message: 'is invalid. Input half-width characters'}, inclusion: { in: 300..9_999_999, message: "is out of setting range" }
-  validates :price, numericality: true
+  
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
   extend ActiveHash::Associations::ActiveRecordExtensions
