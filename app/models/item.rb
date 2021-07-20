@@ -2,7 +2,6 @@ class Item < ApplicationRecord
   belongs_to :user
   has_one_attached :image
 
-
   with_options presence: true do
     validates :image
     validates :product_name
@@ -16,10 +15,10 @@ class Item < ApplicationRecord
       validates :shipment_day_id
     end
 
-     with_options format: { with: /\A[0-9]+\z/, message: 'is invalid. Input half-width characters' },
-     inclusion: { in: 300..9_999_999, message: 'is out of setting range' } do
-       validates :price
-     end
+    with_options format: { with: /\A[0-9]+\z/, message: 'is invalid. Input half-width characters' },
+                 inclusion: { in: 300..9_999_999, message: 'is out of setting range' } do
+      validates :price
+    end
   end
 
   extend ActiveHash::Associations::ActiveRecordExtensions
