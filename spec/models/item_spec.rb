@@ -62,31 +62,31 @@ RSpec.describe Item, type: :model do
       end
 
       it 'category_idが1では登録できないこと' do
-        @item.category_id = '1'
+        @item.category_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Category can't be blank")
       end
 
       it 'status_idが1では登録できないこと' do
-        @item.status_id = '1'
+        @item.status_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Status can't be blank")
       end
 
       it 'burden_idが1では登録できないこと' do
-        @item.burden_id = '1'
+        @item.burden_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Burden can't be blank")
       end
 
       it 'prefectures_idがで1は登録できないこと' do
-        @item.prefectures_id = '1'
+        @item.prefectures_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Prefectures can't be blank")
       end
 
       it 'shipment_day_idが1では登録できないこと' do
-        @item.shipment_day_id = '1'
+        @item.shipment_day_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Shipment day can't be blank")
       end
@@ -98,13 +98,13 @@ RSpec.describe Item, type: :model do
       end
 
       it 'priceが300より小さいと登録できないこと' do
-        @item.price = '299'
+        @item.price = 299
         @item.valid?
         expect(@item.errors.full_messages).to include('Price is out of setting range')
       end
 
       it 'priceがより大きいと登録できないこと' do
-        @item.price = '10000000'
+        @item.price = 10000000
         @item.valid?
         expect(@item.errors.full_messages).to include('Price is out of setting range')
       end
