@@ -77,8 +77,8 @@ RSpec.describe Item, type: :model do
       expect(@item.errors.full_messages).to include("Burden can't be blank")
     end
 
-    it 'prefectures_idが0では登録できないこと' do
-      @item.prefectures_id = '0'
+    it 'prefectures_idがで1は登録できないこと' do
+      @item.prefectures_id = '1'
       @item.valid?
       expect(@item.errors.full_messages).to include("Prefectures can't be blank")
     end
