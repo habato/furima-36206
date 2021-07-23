@@ -1,5 +1,8 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!, only: [:index, :create]
   before_action :set_item, only: [:index, :create]
+  before_action :redirect, only: [:index, :create]
+  before_action :sold_out, only: [:index, :create]
 
   def index
     @order_address = OrderAddress.new
@@ -34,5 +37,13 @@ class OrdersController < ApplicationController
       currency: 'jpy'
     )
   end
+
+  def redirect
+    redirect_to root_path if current_user.id == @item.user_id
+  end
+
+  def sold_out
+    redirect_to root_path if @item.order.present?
+   end
 
 end
