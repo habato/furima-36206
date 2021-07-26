@@ -32,4 +32,12 @@ class Item < ApplicationRecord
   belongs_to :prefectures
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :shipment_day
+
+  def self.search(search)
+    if search != ""
+      Item.where('product_name LIKE(?)', "%#{search}%")
+    else
+      Item.all
+    end
+  end
 end
