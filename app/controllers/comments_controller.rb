@@ -8,7 +8,6 @@ class CommentsController < ApplicationController
     else
       flash.now[:alert] = 'コメントを入力してください。'
     end
-    
   end
 
   private
