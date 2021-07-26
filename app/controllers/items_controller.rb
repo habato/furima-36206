@@ -42,9 +42,7 @@ class ItemsController < ApplicationController
 
   def search
     @items = Item.search(params[:keyword])
-    if @items == Item.all
-      redirect_to root_path
-    end
+    redirect_to root_path if @items == Item.all
   end
 
   private
