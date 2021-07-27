@@ -14,9 +14,14 @@ document.addEventListener('DOMContentLoaded', function(){
 
     document.getElementById('item-image').addEventListener('change', function(e){
       const imageContent = ImageList.querySelector('img');
+      const originalPreview = document.getElementById('original-preview');
       if (imageContent){
         imageContent.remove();
       }
+      if (originalPreview) {
+        originalPreview.remove();
+      }
+
       const file = e.target.files[0];
       const blob = window.URL.createObjectURL(file);
 
