@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function(){
    };
 
     document.getElementById('item-image').addEventListener('change', function(e){
-      const imageContent = document.querySelector('img');
+      const imageContent = ImageList.querySelector('img');
       if (imageContent){
         imageContent.remove();
       }
