@@ -227,3 +227,11 @@
 .inc {
   font-size: 13px;
 }
+
+.image-preview {
+  max-width: 200px;
+  max-height: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
