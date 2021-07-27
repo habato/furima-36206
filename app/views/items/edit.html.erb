@@ -23,7 +23,9 @@ app/assets/stylesheets/items/new.css %>
         <%= f.file_field :image, id:"item-image" %>
       </div>
     </div>
-
+    <div id="image-list">
+      <%= image_tag @item.image, class:"original-preview", id:"original-preview"  if @item.image.attached?%>
+    </div>
     <div class="new-items">
       <div class="weight-bold-text">
         商品名
