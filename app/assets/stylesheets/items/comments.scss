@@ -4,13 +4,13 @@
   height: 200px;
   border: solid 2px #dedede;
   background-color: white;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .comments_list {
   list-style: none;
 }
 
-.commment-name {
+.comment-name {
   color: #3ccace;
 }
